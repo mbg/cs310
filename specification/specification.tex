@@ -1,11 +1,11 @@
-\documentclass[a4paper,fleqn,twoside,12pt]{article}
+\documentclass[a4paper,fleqn,12pt]{article}
 
 %%%%%%%%%%%%%%%%%%%%
 
 \input{../common/common.tex}
 \input{../common/project.tex}
 
-\assignment{Progress report}
+\assignment{Project specification}
 
 %%%%%%%%%%%%%%%%%%%%
 
@@ -15,10 +15,9 @@
 \makeatletter
 \fancypagestyle{plain}{
 	\fancyhf{}
-	\fancyhead[LE]{\thepage}
-	\fancyhead[RE]{\textit{\@author}}
-	\fancyhead[RO]{\thepage}
-	\fancyhead[LO]{\textit{\@title}}
+	\fancyhead[R]{\textit{\@title} - \textit{\@assignment}}
+    \fancyhead[L]{\textit{\@author}}
+    \fancyfoot[C]{\thepage}
 }
 \makeatother
 
@@ -29,10 +28,13 @@
 \input{../common/titlepage.tex}
 
 \pagestyle{plain}
-\input{introduction.tex}
-\input{background.tex}
-\input{progress.tex}
-\input{project-management.tex}
+
+\section{Introduction}
+
+% \input{introduction.tex}
+% \input{background.tex}
+% \input{progress.tex}
+% \input{project-management.tex}
 
 \bibliographystyle{../common/plainnat}
 \bibliography{../common/bibliography}

@@ -1,0 +1,42 @@
+
+\usepackage[]{geometry}
+\usepackage[latin1]{inputenc}
+\usepackage[UKenglish]{babel}
+\usepackage[UKenglish]{isodate}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{chngpage}
+\usepackage{calc}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+\usepackage[nameinlink]{cleveref}
+\usepackage{fancyhdr}
+\usepackage{titletoc}
+\usepackage[explicit]{titlesec}
+\usepackage{natbib}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[sc]{mathpazo}
+\linespread{1.05} 
+\usepackage[T1]{fontenc}
+\usepackage{minted}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	urlcolor=black,
+	citecolor=black
+}
+
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{\medskipamount}
+\renewcommand\baselinestretch{1.2}
+
+\cleanlookdateon
+
+\makeatletter
+\newcommand{\@assignment}[0]{Assignment}
+\newcommand{\assignment}[1]{\renewcommand{\@assignment}{#1}}
+\makeatletter

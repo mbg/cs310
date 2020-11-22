@@ -1,10 +1,10 @@
-name: Progress report
+name: Specification
 
 on:
   push:
     paths:
-    - '.github/workflows/progress-report.yml'
-    - 'progress-report/**'
+    - '.github/workflows/specification.yml'
+    - 'specification/**'
     - 'common/**'
 
 jobs:
@@ -18,12 +18,12 @@ jobs:
       - name: Compile report
         uses: dante-ev/latex-action@v0.2.0
         with:
-          working_directory: progress-report
-          root_file: progress-report.tex
+          working_directory: specification
+          root_file: specification.tex
           args: -f -bibtex -pdflatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode -latexoption=-shell-escape -latexoption=-synctex=1
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2 
         with:
-          name: progress-report.pdf
-          path: progress-report/progress-report.pdf
+          name: specification.pdf
+          path: specification/specification.pdf
