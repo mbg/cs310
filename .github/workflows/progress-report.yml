@@ -1,0 +1,28 @@
+name: Progress report
+
+on:
+  push:
+    paths:
+    - '.github/workflows/progress-report.yml'
+    - 'progress-report/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v2
+
+      - name: Compile report
+        uses: dante-ev/latex-action@v0.2.0
+        with:
+          working_directory: progress-report
+          root_file: progress-report.tex
+          args: -f -bibtex -pdflatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode -latexoption=-shell-escape -latexoption=-synctex=1
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2 
+        with:
+          name: progress-report.pdf
+          path: progress-report/progress-report.pdf
