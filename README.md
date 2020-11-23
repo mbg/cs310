@@ -24,11 +24,16 @@ Some summary advice for avoiding common mistakes:
     - _Evaluation_: Evidence that your work does indeed solve the problem you identified. This is ideally backed up by data and comprised of tables, graphs, statistics, etc.
     - _Conclusions_: A summary of what is accomplished and what future work could build on the work you have done.
 - Write in _present tense_ for anything that is true at the time of writing. This includes references to later parts of a report (i.e. instead of "In Chapter 5, we will describe [..]" you should write "In Chapter 5, we describe [..]"). Use past tense for anything that was once true, but is no longer true (e.g. "people once believed the Earth was flat"). Use future tense only when describing work you have not yet done (e.g. in the project specification or progress report). It would not be unusual for there to be no future tense at all in the dissertation.
-- Avoid the passive voice and always use the active voice. Ideally first-person plural ("we"), although first-person singular is also acceptable ("I").
-- Be explicit in your writing.
+- Avoid the passive voice and always use the _active voice_. Ideally first-person plural ("we"), although first-person singular is also acceptable ("I").
+- Be _explicit_. For example, don't write "There are many applications for this technique.". Instead write "This technique can be applied to e.g. cakes, pastries, and waffles.".
+- Keep sentences _short_.
+- Be _accurate_. Read what you write and ensure that your wording is technically accurate and makes logical sense.
+- _Use terminology consistently_: there is nothing wrong with repeating the same term several times, even in close proximity. Do not use synonyms to refer to the same concept.
 
 ## Getting feedback
 
 - Get feedback early, ideally for a single chapter at-a-time.
-- Use GitHub/diffs to make it easier to see what has changed. 
-- Say what you want feedback on.
+- Use GitHub/diffs to make it easier to see what has changed:
+    - Do all work for a new report in a separate branch and open a pull request against your main branch, then ask for reviews on that pull request. This will make it easier to see what has changed since the last review, provided you do not force-push to the branch.
+    - Alternatively, use GitHub's diff compare feature and link to a diff of the current commit compared to the one that was last reviewed.
+- Say what you want feedback on and, if you aren't using PRs/diffs, summarise what has changed.
