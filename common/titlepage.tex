@@ -1,13 +1,23 @@
 \makeatletter
 \begin{titlepage}
 
-\textbf{\Huge \@title} \\
-\Large \@assignment \\[1.5cm] 
+% do not show the assignment name for the dissertation
+\iftoggle{IsDissertation}
+{
+    \textbf{\Huge \@title} \\[1.5cm]
+}
+{
+    \textbf{\Huge \@title} \\
+    \Large \@assignment \\[1.5cm] 
+}
 \Large \textbf{\@author} \\
 Department of Computer Science \\
 University of Warwick \\
 
 \vfill 
+
+% include the current date for the dissertation
+\iftoggle{IsDissertation}{\today}{}
 
 \begin{adjustwidth}{-\oddsidemargin-1in}{-\rightmargin}
     \centering

@@ -1,0 +1,47 @@
+\documentclass[a4paper,fleqn,twoside,12pt]{report}
+
+%%%%%%%%%%%%%%%%%%%%
+
+\input{../common/common.tex}
+\input{../common/project.tex}
+
+\toggletrue{IsDissertation}
+
+%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{plain}
+\renewcommand{\headrulewidth}{0.0pt}
+
+\makeatletter
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\fancyhead[LE]{\thepage}
+	\fancyhead[RE]{\textit{\@author}}
+	\fancyhead[RO]{\thepage}
+	\fancyhead[LO]{\textit{\@title}}
+}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\input{../common/titlepage.tex}
+
+\pagestyle{plain}
+
+\input{abstract.tex}
+
+\tableofcontents
+
+\input{introduction.tex}
+\input{background.tex}
+\input{design.tex}
+\input{implementation.tex}
+\input{evaluation.tex}
+\input{conclusions.tex}
+
+\bibliographystyle{../common/plainnat}
+\bibliography{../common/bibliography}
+
+\end{document}

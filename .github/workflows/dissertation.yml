@@ -1,0 +1,29 @@
+name: dissertation
+
+on:
+  push:
+    paths:
+    - '.github/workflows/dissertation.yml'
+    - 'dissertation/**'
+    - 'common/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v2
+
+      - name: Compile report
+        uses: dante-ev/latex-action@v0.2.0
+        with:
+          working_directory: dissertation
+          root_file: dissertation.tex
+          args: -f -bibtex -pdflatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode -latexoption=-shell-escape -latexoption=-synctex=1
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2 
+        with:
+          name: dissertation.pdf
+          path: dissertation/dissertation.pdf
