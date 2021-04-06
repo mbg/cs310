@@ -8,13 +8,19 @@
 }
 {
     \textbf{\Huge \@title} \\
-    \Large \@assignment \\[1.5cm] 
+    \Large \@assignment \\[1.5cm]
 }
 \Large \textbf{\@author} \\
 Department of Computer Science \\
 University of Warwick \\
 
-\vfill 
+% Include the 
+\iftoggle{IsDissertation}{
+    Supervised by \@supervisor \\
+    Year of Study: \@yearofstudy \\[1.5cm]
+}{}
+
+\vfill
 
 % include the current date for the dissertation
 \iftoggle{IsDissertation}{\today}{}
