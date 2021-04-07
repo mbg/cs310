@@ -19,7 +19,7 @@
 \usepackage{natbib}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[sc]{mathpazo}
-\linespread{1.05} 
+\linespread{1.05}
 \usepackage[T1]{fontenc}
 \usepackage{minted}
 
@@ -39,6 +39,10 @@
 \makeatletter
 \newcommand{\@assignment}[0]{Assignment}
 \newcommand{\assignment}[1]{\renewcommand{\@assignment}{#1}}
+\newcommand{\@supervisor}[0]{}
+\newcommand{\supervisor}[1]{\renewcommand{\@supervisor}{#1}}
+\newcommand{\@yearofstudy}[0]{}
+\newcommand{\yearofstudy}[1]{\renewcommand{\@yearofstudy}{#1}}
 \makeatletter
 
 \newtoggle{IsDissertation}

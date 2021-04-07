@@ -1,30 +1,39 @@
 \makeatletter
 \begin{titlepage}
 
-% do not show the assignment name for the dissertation
-\iftoggle{IsDissertation}
-{
-    \textbf{\Huge \@title} \\[1.5cm]
-}
-{
-    \textbf{\Huge \@title} \\
-    \Large \@assignment \\[1.5cm] 
-}
-\Large \textbf{\@author} \\
-Department of Computer Science \\
-University of Warwick \\
+    % do not show the assignment name for the dissertation
+    \iftoggle{IsDissertation}
+    {
+        \textbf{\Huge \@title} \\[1.5cm]
+    }
+    {
+        \textbf{\Huge \@title} \\
+        \Large \@assignment \\[1.5cm]
+    }
+    \Large \textbf{\@author} \\
+    Department of Computer Science \\
+    University of Warwick \\
 
-\vfill 
+    % include the supervisor and year of study if the are specified and its the disseration
+    \iftoggle{IsDissertation}{
+        \ifdefempty{\@supervisor}{}{
+            Supervised by \@supervisor \\
+        }\ifdefempty{\@yearofstudy}{}{
+            Year of Study: \@yearofstudy \\
+        }
+    }{}
 
-% include the current date for the dissertation
-\iftoggle{IsDissertation}{\today}{}
+    \vfill
 
-\begin{adjustwidth}{-\oddsidemargin-1in}{-\rightmargin}
-    \centering
-    \includegraphics[width=\paperwidth]{../common/line.png}
-\end{adjustwidth}
+    % include the current date for the dissertation
+    \iftoggle{IsDissertation}{\today}{}
 
-\vspace*{-3.5cm}
+    \begin{adjustwidth}{-\oddsidemargin-1in}{-\rightmargin}
+        \centering
+        \includegraphics[width=\paperwidth]{../common/line.png}
+    \end{adjustwidth}
+
+    \vspace*{-3.5cm}
 
 \end{titlepage}
 \makeatother
