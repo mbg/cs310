@@ -6,13 +6,14 @@ on:
     - '.github/workflows/dissertation.yml'
     - 'dissertation/**'
     - 'common/**'
+  pull_request:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout 
+      - name: Checkout
         uses: actions/checkout@v2
 
       - name: Compile report
@@ -23,7 +24,7 @@ jobs:
           args: -f -bibtex -pdflatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode -latexoption=-shell-escape -latexoption=-synctex=1
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2 
+        uses: actions/upload-artifact@v2
         with:
           name: dissertation.pdf
           path: dissertation/dissertation.pdf
