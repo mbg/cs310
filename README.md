@@ -6,6 +6,16 @@ This repository contains a starter pack of resources for CS310 and other, simila
 - GitHub Actions workflows for building each report and making them available as build artifacts.
 - Generic advice for writing the reports.
 
+## Getting started
+
+Click on the green "Use this template" button to fork the template to your account. You can customise a few settings, such as the repository name and visibility, during that process. You probably want to make the repository private.
+
+### Working locally
+
+You will need to have a LaTeX distribution, such as [TeX Live](https://www.tug.org/texlive/) installed for the platform you are working on.
+
+The template also supports syntax highlighting using the `minted` package, which requires [Pygments](https://pygments.org) to be installed using e.g. `pip install Pygments` or `pip3 install Pygments` (assuming your platform already has Python installed on it). If this causes you problems or you do not wish to use `minted` for syntax highlighting in your reports, you can remove `\usepackage{minted}` from `common/common.tex`.
+
 ## Advice for writing reports
 
 Before you do anything else, read [Writing for Computer Science](http://encore.lib.warwick.ac.uk/iii/encore/record/C__Rb2777534): I recommend Chapters 1 to 8 and Chapter 13. Then have a look at some samples of _good_ reports that students in previous years have written.
