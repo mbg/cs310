@@ -10,6 +10,10 @@ This repository contains a starter pack of resources for CS310 and other, simila
 
 Click on the green "Use this template" button to fork the template to your account. You can customise a few settings, such as the repository name and visibility, during that process. You probably want to make the repository private.
 
+### Continuous integration
+
+This repository is configured with [GitHub Actions](https://docs.github.com/en/actions) workflows which will build your reports every time you push changes to your fork of the repository. For example, if you change `specification/specification.tex` locally, commit your changes, and push them to GitHub, then the workflow defined in `.github/workflows/specification.yml` will run and build your specification for you. You will be able to find the corresponding job in the "Actions" tab on your repository. If the build is successful, the resulting PDF will be uploaded as a build artifact and can be downloaded from the summary page of the corresponding job.
+
 ### Working locally
 
 You will need to have a LaTeX distribution, such as [TeX Live](https://www.tug.org/texlive/) installed for the platform you are working on.
