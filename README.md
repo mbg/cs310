@@ -18,13 +18,23 @@ This repository is configured with [GitHub Actions](https://docs.github.com/en/a
 
 You will need to have a LaTeX distribution, such as [TeX Live](https://www.tug.org/texlive/) installed for the platform you are working on.
 
-The template also supports syntax highlighting using the `minted` package, which requires [Pygments](https://pygments.org) to be installed using e.g. `pip install Pygments` or `pip3 install Pygments` (assuming your platform already has Python installed on it). If this causes you problems or you do not wish to use `minted` for syntax highlighting in your reports, you can remove `\usepackage{minted}` from `common/common.tex`.
+The template also supports syntax highlighting using the `minted` package, which requires [Pygments](https://pygments.org) to be installed using e.g. `pip install Pygments` or `pip3 install Pygments` (assuming your platform already has Python installed on it). If this causes you problems or you do not wish to use `minted` for syntax highlighting in your reports, you can remove `\usepackage{minted}` from `common/common.tex`. Alternatively, you can follow the instructions below.
 
 To compile your reports locally, you can use `latexmk` or `pdflatex`. For example, to compile the specification using `latexmk`:
 
 ```
 $ cd specification
 $ latexmk specification.tex -pdflatex -bibtex -latexoption=-shell-escape
+```
+
+### Compiling locally using Nix
+
+If you are using [the Nix package manager](https://nixos.org/download.html#download-nix) or are curious about using it, this repository comes with a `shell.nix` file which allows you to enter a Nix shell (using `nix-shell`) that will provide the environment needed to compile the reports. The `nix-shell` will take a little while to start up the first time you open it, because it will download and install all dependencies you need. Once loaded, you can navigate the file system as normal and run a suitable build command:
+
+```
+$ nix-shell
+[nix-shell:~/cs310]$ cd specification
+[nix-shell:~/cs310/specification]$ latexmk specification.tex -pdflatex -bibtex -latexoption=-shell-escape
 ```
 
 ## Advice for writing reports
