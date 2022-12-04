@@ -14,11 +14,18 @@ Click on the green "Use this template" button to fork the template to your accou
 
 This repository is configured with [GitHub Actions](https://docs.github.com/en/actions) workflows which will build your reports every time you push changes to your fork of the repository. For example, if you change `specification/specification.tex` locally, commit your changes, and push them to GitHub, then the workflow defined in `.github/workflows/specification.yml` will run and build your specification for you. You will be able to find the corresponding job in the "Actions" tab on your repository. If the build is successful, the resulting PDF will be uploaded as a build artifact and can be downloaded from the summary page of the corresponding job.
 
-### Working locally
+### Compiling locally
 
 You will need to have a LaTeX distribution, such as [TeX Live](https://www.tug.org/texlive/) installed for the platform you are working on.
 
 The template also supports syntax highlighting using the `minted` package, which requires [Pygments](https://pygments.org) to be installed using e.g. `pip install Pygments` or `pip3 install Pygments` (assuming your platform already has Python installed on it). If this causes you problems or you do not wish to use `minted` for syntax highlighting in your reports, you can remove `\usepackage{minted}` from `common/common.tex`.
+
+To compile your reports locally, you can use `latexmk` or `pdflatex`. For example, to compile the specification using `latexmk`:
+
+```
+$ cd specification
+$ latexmk specification.tex -pdflatex -bibtex -latexoption=-shell-escape
+```
 
 ## Advice for writing reports
 
