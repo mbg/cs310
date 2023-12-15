@@ -25,7 +25,7 @@ jobs:
           args: -f -bibtex -pdflatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode -latexoption=-shell-escape -latexoption=-synctex=1
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: progress-report.pdf
           path: progress-report/progress-report.pdf
